@@ -1,0 +1,95 @@
+server:
+  port: 9000
+
+dubbo:
+  application:
+    name: consumer-service
+    qos-enable: false
+    qos-port: 25555
+    check-serializable: false
+    serialize-check-status: DISABLE
+
+  registry:
+    address: nacos://127.0.0.1:8848
+    use-as-config-center: false
+    use-as-metadata-center: true
+
+  protocol:
+    name: dubbo
+    port: -1
+    #serialization: hessian2
+    #serialization: fastjson2
+    #serialization: protobuf
+    #serialization: kryo
+    #serialization: protostuff
+  #metadata-report:
+  #  address: nacos://127.0.0.1:8848
+
+
+  #scan:
+  #  base-packages: org.example.bean.ServerInfo
+  #provider:
+  #  prefer-serialization: java
+
+
+
+spring:
+  application:
+    name: HttpServer
+
+  cloud:
+    compatibility-verifier:
+      enabled: false
+
+    nacos:
+      server-addr: 127.0.0.1:8848
+      config:
+        #server-addr: 127.0.0.1:8848
+        refresh-enabled: true
+        file-extension: yaml
+        import-check:
+          enabled: false
+        preference: remote
+
+      discovery:
+        #server-addr: 127.0.0.1:8848
+        metadata:
+          server_base_port: 8180
+          server_id: 12222
+
+
+
+####################################################################################################
+#spring:
+#  application:
+#    name: HttpServer
+#
+#  cloud:
+#    nacos:
+#      config:
+#        server-addr: 127.0.0.1:8848
+#        refresh-enabled: true
+#        file-extension: yaml
+#        import-check:
+#          enabled: false
+#        preference: remote
+#
+#      discovery:
+#        server-addr: 127.0.0.1:8848
+#        metadata:
+#          server_base_port: 8180
+#          server_id: 12222
+#
+#
+#    compatibility-verifier:
+#      enabled: false
+
+
+#dubbo:
+#  application:
+#    name: consumer-service
+#    qos-port: 23333
+#  registry:
+#    address: nacos://127.0.0.1:8848
+#use-as-config-center: false
+#use-as-metadata-center: false

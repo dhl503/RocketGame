@@ -1,0 +1,49 @@
+spring:
+  #application:
+  #  name: MyRocket
+
+  datasource:
+    url: jdbc:mysql://192.168.46.128:3306/OrmTest
+    username: liudl01
+    password: hello1987
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+
+  data:
+    redis:
+      host: 192.168.46.128
+      port: 6379
+      database: 0
+      password: 123456
+
+#  cloud:
+#    nacos:
+#      server-addr: 127.0.0.1:8848
+
+
+#dubbo:
+#  application:
+#    name: provider-service-202452000
+#  registry:
+#    address: nacos://127.0.0.1:8848
+#    use-as-config-center: false
+#    use-as-metadata-center: false
+
+# 如果不引入bootstrap包 就加入下面配置，否则 走bootstrap.yml
+#  config:
+#    import: nacos:MyRocket.properties
+#  cloud:
+#    nacos:
+#      server-addr: 127.0.0.1:8848
+#    compatibility-verifier:
+#      enabled: false
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.mybatis.entity
+
+#dubbo:
+#  protocol:
+#    name: dubbo
+#  registry:
+#    address: spring-cloud://localhost

@@ -1,0 +1,19 @@
+syntax = "proto3";
+//package testDemo;
+option java_outer_classname = "PbDemoxx";
+option java_package = "org.example.myrocket.proto.bean";
+
+enum CmdRank {
+    RankInfo = 0;// 个人排行榜
+    RankEasyShow = 1;// 排行榜简单显示
+    RankAllianceEasyShow = 2;// 排行榜简单显示
+    RankGlobalInfo = 3; //跨服排行榜
+    RankGlobalEasyShow = 4;// 跨服排行榜简单显示
+    RankGlobalAllianceEasyShow = 5;// 跨服排行榜简单显示
+}
+
+// 个人战力排行榜
+message MsgReqRankInfo {
+    int32 rankType = 1;
+    int32 page = 2;// 页数
+}
