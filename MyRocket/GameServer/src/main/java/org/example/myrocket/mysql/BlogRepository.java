@@ -1,4 +1,4 @@
-package org.example.myrocket;
+package org.example.myrocket.mysql;
 
 import org.springframework.data.repository.CrudRepository;
 

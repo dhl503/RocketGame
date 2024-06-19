@@ -1,15 +1,14 @@
-package org.example.myrocket;
+package org.example.myrocket.mysql;
 
-import jakarta.persistence.Entity;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Table
 @Data
-public class Blog {
+public class Myusertest {
     @Id
     private Integer id;
-    private String title;
-    private String content;
+    private String name;
+    private String desc;
 }

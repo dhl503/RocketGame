@@ -1,4 +1,4 @@
-package org.example.myrocket;
+package org.example.myrocket.jdbctest;
 
 import lombok.Getter;
 import lombok.Setter;
