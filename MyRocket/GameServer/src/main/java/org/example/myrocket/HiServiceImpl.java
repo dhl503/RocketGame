@@ -2,7 +2,7 @@ package org.example.myrocket;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboService;
-import org.example.TestService;
+import org.example.ice.TestService;
 import org.example.bean.ServerInfo;
 
 @Slf4j

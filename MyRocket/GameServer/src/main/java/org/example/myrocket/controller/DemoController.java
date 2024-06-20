@@ -4,6 +4,8 @@ package org.example.myrocket.controller;
 //import com.alibaba.nacos.api.config.annotation.NacosProperty;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.dubbo.config.annotation.DubboReference;
+import org.example.ice.GetDateService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,10 +30,18 @@ public class DemoController {
     @Value("${test.n2:dada}")
     private String testNacosStr = "";
 
+    @DubboReference
+    private GetDateService dateservice;
+
     @GetMapping("/getConfig")
     public boolean get() {
         log.info("hello: {} -- {}", useLocalCache, testNacosStr);
         return useLocalCache;
+    }
+
+    @GetMapping("/getDateToday")
+    public String getDateToday() {
+        return dateservice.getdate();
     }
 
 }
