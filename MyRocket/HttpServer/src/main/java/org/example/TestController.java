@@ -3,6 +3,7 @@ package org.example;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.example.bean.ServerInfo;
+import org.example.ice.HelloService;
 import org.example.ice.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,8 +29,13 @@ public class TestController {
     @Value("${test.n1}")
     private int mytestInt;
 
+    @DubboReference(group = "aa")
+    private HelloService helloservice;
+
     @GetMapping("hello2")
     public String hello() {
+
+        helloservice.hello("dada");
 
         //myservice.hha(12);
 
